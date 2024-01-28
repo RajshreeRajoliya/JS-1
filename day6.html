@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+      display: flex;
+      height: 200px; /* Set a fixed height for demonstration */
+      border: 2px solid;
+    }
+
+    .box {
+      width: 50px;
+      /* height: 50px; */
+      margin: 5px;
+      background-color: #3498db;
+      display: flex;
+     
+    }
+
+    .box:nth-child(1){
+        align-self: baseline;
+    }
+    /* Apply align-self to control alignment for each box */
+    .box:nth-child(2) {
+      align-self: flex-end; /* Align to the bottom of the container */
+    }
+
+    .box:nth-child(3) {
+      align-self: center; 
+      /* Align to the center of the container */
+    }
+
+    .box:nth-child(4) {
+      align-self: flex-start; 
+      /* Align to the top of the container */
+    }
+
+    .box:nth-child(5) {
+      align-self: stretch; 
+      /* Default stretch (fills the container height) */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+  </div>
+
+</body>
+</html>

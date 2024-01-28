@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter 1 number</label>
+    <input type="text" id="in1">
+
+    <label for="">Enter 2 number</label>
+    <input type="text" id="in2">
+
+    <label for="">Enter 3 number</label>
+    <input type="text" id="in3">
+
+    <h1 id="ans"></h1>
+</body>
+</html>
+
+<script>
+let a = document.getElementById("in1").value
+let b = document.getElementById("in2").value
+let c = document.getElementById("in3").value
+
+
+if(a == "" || b == "" || c ==""){
+document.getElementById("ans").innerText = "Enter Valid numbers"
+} else {
+    a = parseInt(a)
+    b = parseInt(b)
+    c = parseInt(c)
+    if(a < b){
+        if(a < c){
+            document.getElementById("ans").innerText = a
+        } else {
+            document.getElementById("ans").innerText = c
+        }
+    } else {
+        if(b < c){
+            document.getElementById("ans").innerText = b
+        } else {
+            document.getElementById("ans").innerText = c
+        }
+    }
+}
+</script>
