@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="in">
+</body>
+</html>
+<script>
+let cpw = document.getElementById("in").value
+let stpw = "123@raj"
+
+if(cpw == ""){
+    alert("Enter pw")
+} else {
+    if(cpw === stpw){
+    alert("Logged In")
+} else {
+    alert("Incorrect password")
+}
+}
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="in1"><input type="text" id="in2">
+    <h1 id="ans"></h1>
+</body>
+</html>
+
+<script>
+ let food = document.getElementById("in1").value 
+    let drinks = document.getElementById("in2").value
+
+    // food = parseInt(food)
+    // drinks = parseInt(drinks)
+    if(food == "" || drinks == ""){
+        document.getElementById("ans").innerHTML = "Please select"
+    } else {
+       
+
+    let gst = 200
+    let sgst = 100
+    let service = 20
+
+    let total = ((+food + +drinks) - gst - sgst - service)
+    document.getElementById("ans").innerHTML = total
+    }
+  
+</script>
