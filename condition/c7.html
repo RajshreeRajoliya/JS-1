@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="in1"><input type="text" id="in2"><input type="text" id="in3">
+    <h1 id="ans"></h1>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("in1").value
+    let b = document.getElementById("in2").value
+    let c = document.getElementById("in3").value
+
+    let d = +a + +b + +c
+
+    if(d === 180){
+        document.getElementById("ans").innerHTML = "Triangle"
+        if(a == b && b == c && c == a){
+            document.getElementById("ans").innerHTML = "Equilateral"
+        } else if(a != b && b != c && c != a) {
+            document.getElementById("ans").innerHTML = "Scalene"
+        } else {
+            document.getElementById("ans").innerHTML = "Isoceles"
+        }
+    }
+
+
+    let isSunny = true
+    let isWarm = true
+
+    if(isSunny && isWarm){
+        console.log("Both")
+    } else {
+        console.log("nor")
+    }
+</script>

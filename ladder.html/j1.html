@@ -1,0 +1,43 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <label for="">Enter Password</label>
+    <input type="text" id="in">
+    <h1 id="result"></h1>
+</center>
+</body>
+</html>
+<script>
+    let savedPassword = 'abc@123'
+    let enteredPassword = document.getElementById("in").value
+
+    if(enteredPassword == ""){
+        document.getElementById("result").innerText = ""
+    } else {
+        if(savedPassword === enteredPassword){
+        alert("Logged In !")
+    } else {
+        let newPassword = prompt("Forgot Password ? Create new one")
+        if(newPassword.length >= 8){
+            document.getElementById("result").innerText = "Password changed !"
+            savedPassword = newPassword
+            console.log(savedPassword)
+           
+        }
+
+        if(savedPassword === newPassword){
+document.getElementById("ans").innerHTML = "Succesfully logged in!"
+            }
+        // } else {
+        //     document.getElementById("result").innerHTML = "Minimum 8 character required!"
+        // }
+    }
+    }
+    
+</script> -->

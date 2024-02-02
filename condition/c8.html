@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let s = "123@raj"
+    let e = prompt("Enter Password")
+
+    if(s === e){
+        console.log("Logged")
+    } else {
+      let n = prompt("Enter New Password")
+      if(n.length >= 8){
+        console.log("Successfully created new password")
+        s = n
+        if(s === n){
+            console.log("logged after new")
+        } else {
+            console.log("Incorrect")
+        }
+      } else {
+        console.log("Minimum 8")
+      }
+    }
+</script>

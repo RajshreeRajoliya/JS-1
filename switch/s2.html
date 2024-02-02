@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Menu</h1>
+        <h2>PLACE ORDER</h2>
+<input type="text" id="in">
+<br><br><br><br><br>
+        <h3>pizza</h3>
+        <h3>burger</h3>
+        <h3>coffee</h3>
+        <h3>tea</h3>
+
+        <br><br><br><br>
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+
+
+<script>
+    let name = document.getElementById("in").value
+
+    switch(name){
+        case "pizza" : document.getElementById("ans").innerHTML = "Amounts is Rs 300 "
+        break
+
+        case "burger" : document.getElementById("ans").innerHTML =  "Amounts is Rs 900 "
+        break
+
+
+        case "coffee" : document.getElementById("ans").innerHTML =  "Amounts is Rs 600 "
+        break
+
+        case "tea" :  document.getElementById("ans").innerHTML = "Amounts is Rs 100 "
+        break
+
+
+ default :document.getElementById("ans").innerHTML =  "rehende"
+    }
+
+    
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>WEEK</h1>
+        <input type="text" id="in">
+        <br><br><br><br><br><br><br>
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+
+<script>
+    let day = document.getElementById("in").value
+
+    let dayname
+
+    switch(parseInt(day)){
+        case 1 : dayname = "MONDAY "
+        dayname+= "WEEKDAY"
+        break
+
+        case 2 : dayname = "TUESDAY "
+        dayname+= "WEEKDAY"
+        break
+
+        case 3 : dayname = "WEDNESDAY "
+        dayname+= "WEEKDAY"
+        break
+
+        case 4 : dayname = "THURSDAY "
+        dayname+= "WEEKDAY"
+        break
+
+        case 5 : dayname = "FRIDAY "
+        dayname+= "WEEKDAY"
+        break
+
+        case 6 : dayname = "SATURDAY "
+        dayname+= "WEEKEND"
+        break
+
+        case 7 : dayname = "SUNDAY "
+        dayname+= "WEEKEND"
+        break
+
+        default : dayname = ""
+    }
+
+    document.getElementById("ans").innerHTML = `Today ${dayname}`
+</script>
