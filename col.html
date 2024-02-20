@@ -5,26 +5,352 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background: black;
+}
+
+h1 {
+  --background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: url("https://picsum.photos/id/505/1280/720");
+  background-position: center !important;
+  font-size: 140pt;
+  line-height: 180pt;
+  margin: 0;
+  font-weight: 900;
+  color: transparent;
+  animation: images 5s linear infinite;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  overflow: visible;
+  z-index: 1;
+}
+
+h1::before {
+  position: absolute;
+  width: calc(100% + 90px);
+  height: calc(100% + 20px);
+  content: "";
+  z-index: -3;
+  border-radius: 30px;
+  background: transparent;
+  border: 5px solid var(--background);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px inset;
+}
+
+h1::after {
+  position: absolute;
+  width: calc(100% + 70px);
+  height: 100%;
+  content: "";
+  background: var(--background);
+  mix-blend-mode: hue;
+  border-radius: 30px;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+/* Be sure to include the font links in the <head>. Change fonts and colors here*/
+
+@keyframes images {
+  0% {
+    --background: red;
+    background: url("https://picsum.photos/id/505/1280/720");
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -15px;
+    background-size: 50%;
+  }
+  9.9% {
+    /* All the keyframes at *.9% prevent images from "fading" between each slide, creates instant change. Also provides background image zoom. */
+    --background: red;
+    background: url("https://picsum.photos/id/505/1280/720");
+    font-family: "Poppins", sans-serif;
+    background-size: 100%;
+  }
+  10% {
+    --background: darkorange;
+    background: url("https://picsum.photos/id/290/1280/720");
+    font-family: "Work Sans", sans-serif;
+    background-size: 50%;
+  }
+  19.9% {
+    --background: darkorange;
+    background: url("https://picsum.photos/id/290/1280/720");
+    font-family: "Work Sans", sans-serif;
+    background-size: 100%;
+  }
+  20% {
+    --background: gold;
+    background: url("https://picsum.photos/id/322/1280/720");
+    font-family: "Azeret Mono", monospace;
+    background-size: 50%;
+  }
+  29.9% {
+    --background: gold;
+    background: url("https://picsum.photos/id/322/1280/720");
+    font-family: "Azeret Mono", monospace;
+    background-size: 100%;
+  }
+  30% {
+    --background: chartreuse;
+    background: url("https://picsum.photos/id/491/1280/720");
+    font-family: "Barlow", sans-serif;
+    background-size: 50%;
+  }
+  39.9% {
+    --background: chartreuse;
+    background: url("https://picsum.photos/id/491/1280/720");
+    font-family: "Barlow", sans-serif;
+    background-size: 100%;
+  }
+  40% {
+    --background: deepskyblue;
+    background: url("https://picsum.photos/id/560/1280/720");
+    font-family: "Jost", sans-serif;
+    background-size: 50%;
+  }
+  49.9% {
+    --background: deepskyblue;
+    background: url("https://picsum.photos/id/560/1280/720");
+    font-family: "Jost", sans-serif;
+    background-size: 100%;
+  }
+  50% {
+    --background: rebeccapurple;
+    background: url("https://picsum.photos/id/309/1280/720");
+    font-family: "Kanit", sans-serif;
+    background-size: 50%;
+  }
+  59.9% {
+    --background: rebeccapurple;
+    background: url("https://picsum.photos/id/309/1280/720");
+    font-family: "Kanit", sans-serif;
+    background-size: 100%;
+  }
+  60% {
+    --background: mediumspringgreen;
+    background: url("https://picsum.photos/id/650/1280/720");
+    font-family: "Petrona", serif;
+    background-size: 50%;
+  }
+  69.9% {
+    --background: mediumspringgreen;
+    background: url("https://picsum.photos/id/650/1280/720");
+    font-family: "Petrona", serif;
+    background-size: 100%;
+  }
+  70% {
+    --background: lightsalmon;
+    background: url("https://picsum.photos/id/740/1280/720");
+    font-family: "Raleway", sans-serif;
+    background-size: 50%;
+  }
+  79.9% {
+    --background: lightsalmon;
+    background: url("https://picsum.photos/id/740/1280/720");
+    font-family: "Raleway", sans-serif;
+    background-size: 100%;
+  }
+  80% {
+    --background: deeppink;
+    background: url("https://picsum.photos/id/547/1280/720");
+    font-family: "Tomorrow", sans-serif;
+    background-size: 50%;
+    letter-spacing: 0px;
+  }
+  89.9% {
+    --background: deeppink;
+    background: url("https://picsum.photos/id/547/1280/720");
+    font-family: "Tomorrow", sans-serif;
+    background-size: 100%;
+  }
+  90% {
+    --background: darkblue;
+    background: url("https://picsum.photos/id/455/1280/720");
+    font-family: "Fira Sans", sans-serif;
+    background-size: 50%;
+  }
+  99.9% {
+    --background: darkblue;
+    background: url("https://picsum.photos/id/455/1280/720");
+    font-family: "Fira Sans", sans-serif;
+    background-size: 100%;
+  }
+  100% {
+    --background: red;
+    background: url("https://picsum.photos/id/537/1280/720");
+    font-family: "Poppins", sans-serif;
+    background-size: 50%;
+    letter-spacing: -15px;
+  }
+}
+
+/* Responsivity; breakpoints will need to be changed based on your text length.*/
+
+@media (max-width: 1225px) {
+  h1 {
+    font-size: 100pt;
+    line-height: 130pt;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 70pt;
+    line-height: 90pt;
+  }
+  h1::after {
+    filter: blur(30px);
+  }
+}
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 50pt;
+    line-height: 64pt;
+  }
+  h1::after {
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 34pt;
+    line-height: 44pt;
+  }
+  p::before {
+    width: calc(100% + 50px);
+    border-radius: 10px;
+  }
+  p::after {
+    width: calc(100% + 30px);
+    border-radius: 10px;
+  }
+}
+
+/* preloader. remove if not using the preloader, or to break everything */
+
+code,
+code * {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+</style>
 <body>
     
 </body>
 </html>
+
 <script>
-    function z(){
-        function x(){
-        var a = 90
-    //   return  function y(){
-        function y(){
-            console.log(a)
-        }
-        a= 800
-        // y()
-        // return y
-        y()
-    }
-    x()
-    }
-    z()
-//   var z =  x()
-//   console.log(z)
+//    function z(){
+//     function x(){
+//         var a = 90
+//         function y(){
+      
+//             console.log(a)
+//         }
+//         y()
+//     }
+//     x()
+//    }
+//    z()
+// var c = 0
+
+//    function outer(){
+   
+// function inner(){
+// c++
+// console.log(c)
+// }
+// inner()
+//    }
+//    outer()
+//    outer()
+//    outer()
+
+//    function greet(name){
+//     function greeting(){
+// console.log("hello"+name)
+//     }
+//     greeting()
+//    }
+//    greet("ayesha")
+//    greet("ayesha")
+
+// function m1(n1){
+//     function m2(n2){
+// console.log(n1 * n2)
+//     }
+//     m2(4)
+// }
+// m1(3)
+// var c = 0
+
+// function outer(){
+ 
+//     function inner(){
+//         c++
+//         console.log(c+"\n")
+//     }
+//     inner()
+// }
+
+// outer()
+// outer()
+// outer()
+
+
+// function greet(name){
+// function greetings(){
+//     console.log("HELLO "+ name)
+// }
+// greetings()
+// }
+// greet("Raju")
+// greet("Rmu")
+
+
+// function m1(n1){
+// function m2(n2){
+//     console.log(n1 * n2)
+// }
+// m2(6)
+// }
+// m1(2)
 </script>
