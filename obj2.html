@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // let person = {
+    //     name : "pp",
+    //     age : 90,
+    //     hobby : true
+    // }
+
+    // for(let i in person){
+    //     console.log(i+ ":" + person[i])
+    // }
+
+//     let maap = [
+//         {ch : "a" , val : 1},
+//         {ch : "b" , val : 2},
+//         {ch : "c" , val : 3},
+//     ]
+
+//     for(let i = 0 ; i < maap.length ; i++){
+//   document.write(maap[i].ch+"-"+maap[i].val+"<br/>")
+//     }
+
+
+
+
+
+
+// let person = {
+//     name : "kunj",
+//     age : 90,
+//     hobby : true
+// }
+
+// for(let i in person){
+//     console.log(i + ": "+person[i])
+// }
+
+// let maaap =[
+//     {ch : "a" , val : 1},
+//     {ch : "b" , val : 5},
+//     {ch : "c" , val : 14},
+// ]
+
+// for(let i = 0 ; i < maaap.length ; i++){
+//     document.write(maaap[i].ch+"-"+maaap[i].val+"<br/>")
+// }
+
+let pr = [
+    {name : "p" , price : 400 , rating : 3},
+    {name : "pp" , price : 70 , rating : 2},
+    {name : "pq" , price : 200 , rating : 5},
+]
+
+// let sum = 0;
+// for(let i = 0 ; i < pr.length ; i++){
+// sum += pr[i].rating
+// }
+
+// console.log(Math.floor(sum / pr.length))
+
+let min = pr[0].price
+
+for(let i = 0 ; i < pr.length ; i++){
+    if(min > pr[i].price){
+        min = pr[i].price
+    }
+}
+console.log(min)
+
+</script>

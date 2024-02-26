@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="i1">
+    <input type="text" id="i2">
+    <button onclick="Add()">add</button>
+    <h1 id="head">gghh</h1>
+    <button id="btn2">color</button>
+</body>
+</html>
+<script>
+
+
+function Add(){
+    let one = document.getElementById("i1").value
+let sec = document.getElementById("i2").value
+    var a = +one + +sec
+    console.log(a)
+}
+Add()
+let h1 = document.getElementById("head")
+document.getElementById("btn2").addEventListener("click",fun)
+function fun(){
+    h1.style.display.backgroundColor = "blue"
+}
+</script>

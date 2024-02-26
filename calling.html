@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="i1"><input type="text" id="i2">
+    <h1 id="ans"></h1>
+    <button onclick="add()">Add</button>
+    <button id="btn2">Sub</button>
+
+    <hr>
+
+    <h4 id="q1">Our Website</h4>
+    <button id="btn5">change</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia illum vero reprehenderit neque, dolorum fuga qui quod maxime quae in, eaque doloribus molestias perspiciatis ipsa asperiores necessitatibus odit cum quaerat.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia illum vero reprehenderit neque, dolorum fuga qui quod maxime quae in, eaque doloribus molestias perspiciatis ipsa asperiores necessitatibus odit cum quaerat.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia illum vero reprehenderit neque, dolorum fuga qui quod maxime quae in, eaque doloribus molestias perspiciatis ipsa asperiores necessitatibus odit cum quaerat.</p>
+    <button id="btn6">changess</button>
+</body>
+</html>
+<script>
+    function add(){
+        let o = document.getElementById("i1").value
+        let s = document.getElementById("i2").value
+document.getElementById("ans").innerHTML = +o + +s
+    }
+
+    document.getElementById("btn2").addEventListener("click",fun)
+    function fun(){
+        let o = document.getElementById("i1").value
+        let s = document.getElementById("i2").value
+document.getElementById("ans").innerHTML = +o - +s 
+    }
+
+   
+    document.querySelector("#btn5").addEventListener("click",chg)
+    function chg(){
+        let h1 = document.querySelector("#q1")
+        h1.style.color = "pink"
+        h1.style.backgroundColor = "green"
+    }
+
+document.querySelector("#btn6").addEventListener("click",chges)
+let p = document.querySelectorAll("p")
+function chges(){
+    for(let i =0 ;i < p.length ; i++){
+        p[i].style.color = "orange"
+    }
+}
+</script>

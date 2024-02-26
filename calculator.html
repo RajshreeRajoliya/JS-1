@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+ <input type="number" id="fnum" placeholder="Enter Any Number">
+ <input type="number" id="snum" placeholder="Enter Any Number">
+ <br>
+ <br>
+ <button onclick="Addition()">Addition</button>   
+ <button onclick="Subtraction()">Subtraction</button>
+ <button onclick="Multiplication()">Multiplication</button>
+ <button onclick="Division()">Division</button>
+</body>
+</html>
+<script>
+    function Addition(){
+     var num1 = document.getElementById("fnum").value;
+     var num2 = document.getElementById("snum").value;
+     var add = +num1 + +num2;
+     alert(add);
+     console.log(typeof num1);
+    }
+    function Subtraction(){
+     var num1 = document.getElementById("fnum").value;
+     var num2 = document.getElementById("snum").value;
+     var sub = +num1 - +num2;
+     alert(sub);
+    }
+    function Multiplication(){
+     var num1 = document.getElementById("fnum").value;
+     var num2 = document.getElementById("snum").value;
+     var multi = +num1 * +num2;
+     alert(multi);
+    }
+    function Division(){
+     var num1 = document.getElementById("fnum").value;
+     var num2 = document.getElementById("snum").value;
+     var div = +num1 / +num2;
+     alert(div);
+    }
+</script>
