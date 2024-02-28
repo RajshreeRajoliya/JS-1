@@ -57,14 +57,8 @@ if(id == "High"){
 } else {
     td2.style.backgroundColor = "green";
 }
-var td3 = document.createElement("td");
-td3.innerText = "delete";
-td3.addEventListener("click" , deletefun);
-function deletefun(){
-    // console.log(event.target.parentNode);
-    event.target.parentNode.remove();
-}
-tr.append(td1 , td2 , td3);
+
+tr.append(td1 , td2 );
 document.querySelector("tbody").append(tr);
 }
 </script>
