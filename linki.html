@@ -20,21 +20,34 @@
     const Node2 = new Node(789)
     const Node3 = new Node(7)
     const Node4 = new Node(708)
-    const Node5 = new Node(790)
+   
 
     Node1.next = Node2
     Node2.next = Node3
     Node3.next = Node4
-    Node4.next = Node5
+   
 
-// Node2.next = Node4    
+//  function mid(head){
 
-let newNode = new Node(990)
-Node3.next = newNode
-newNode.next = Node4
-    let curr = Node1
-    while(curr != null){
-        console.log(curr.value)
-        curr = curr.next
+//     let slow = head
+//     let fast = head
+
+//     while(fast != null && fast.next != null){
+//         slow = slow.next
+//         fast = fast.next.next
+//     }
+//     return slow
+//  }
+
+//  let midnode = mid(Node1)
+//  console.log(midnode.value)
+
+
+function palindrome(head){
+    let curr = head
+    while(head != null){
+        
     }
+}
+
 </script>
