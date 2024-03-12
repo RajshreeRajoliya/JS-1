@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    h1::before{
+content: '✨';
+    }
+
+    h1::after{
+content: '✨';
+    }
+    span::before{
+        content: '🌟';  
+    }
+
+    span:hover::before{
+content: '💫';
+    }
+
+    div{
+        height: 150px;
+        width: 150px;
+    }
+    .img-container{
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-container:hover{
+        
+ content: url('https://www.bluefly.com/cdn/shop/files/1311784206_RLLZ_2_360x.jpg?v=1698248133');
+
+ content: url('https://www.bluefly.com/cdn/shop/files/1311784206_RLLZ_4_360x.jpg?v=1698248136');
+    }
+
+    .pic{
+width: 100px;
+height: 100px;
+/* transition: height  width ;
+transition-duration: 1000ms;
+
+transition-delay: 4s; */
+
+/* transition-timing-function: linear; */
+
+/* linear ease ease-in ease-out ease-in-out */
+    }
+
+    .pic:hover{
+width: 200px;
+/* height: 200px; */
+    }
+
+    .d{
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        transition-duration: 2s;
+        transition-timing-function: ease-in-out;
+    }
+    /* #div1:hover{
+        transform: translate(600px);
+    } */
+
+    #div2:hover{
+        transform: translate(600px);
+    }
+</style>
+<body>
+    <center>
+        <h1>Our Website: <span>Today is emoji day</span> </h1>
+
+        <div>
+            <img src="https://www.bluefly.com/cdn/shop/files/1311784206_RLLZ_1_360x.jpg?v=1698248131" class="img-container" alt="">
+        </div>
+
+        <div class="d1"> 
+          <img src="https://www.bluefly.com/cdn/shop/products/446744-P_360x.jpg?v=1676319888" alt="" class="pic">
+       </div>
+
+
+       
+    </center>
+
+    <div class="d" id="div1">1</div>
+    <div class="d" id="div2">2</div>
+    <div class="d" id="div3">3</div>
+    <div class="d" id="div4">4</div>
+    <div class="d" id="div5">5</div>
+</body>
+</html>

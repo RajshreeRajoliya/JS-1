@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+
+// class Animal{
+//   constructor(name){
+//     this.name = name
+//   }
+//   eat(){
+//     console.log(this.name + " Eating")
+//   }
+//   sleep(){
+//     console.log(this.name + " Sleeping")
+//   }
+// }
+
+// class Cat extends Animal{
+//   sound(){
+//     console.log(this.name + "Meooow")
+//   }
+// }
+
+// let a = new Animal("Browny")
+// a.sleep()
+// a.eat()
+
+// let b = new Cat("Cookie")
+// b.sound()
+// b.eat()
+
+
+
+// class Automobile{
+//   constructor(name , wheel , color){
+//     this.name = name
+//     this.wheel = wheel
+//     this.color = color
+//   }
+// }
+
+// class electric extends Automobile{
+//   constructor(name , wheel , color, bttry){
+//     super(name , wheel , color)
+// this.bttry = bttry
+//   }
+// }
+
+// let tata = new Automobile("Tata" , 4 , "red")
+// console.log(tata)
+
+// let newTata = new electric("Tata2" , 4 , "white", 200)
+// console.log(newTata)
+
+
+// Array.prototype.raj = function(cb){
+//   let newArr = []
+//   for(let i = 0 ; i < this.length ; i++){
+//     newArr.push(cb(this[i]))
+//   }
+//   return newArr
+// }
+
+// let arr = [1,2,3,4,5]
+// let a = arr.raj((el)=>{
+//   return el
+// })
+
+// console.log(a)
+
+// Array.prototype.raj = function(cb){
+
+//   let newArr = []
+//   for(let i = 0; i < this.length ; i++){
+//     if(cb(this[i])){
+// newArr.push(cb(this[i]))
+//     }
+//   }
+
+// return newArr
+
+
+// }
+// let arr = [1,2,3,4,5]
+
+// let a = arr.raj((el)=>{
+//   if(el % 2 == 0){
+//     return el
+//   }
+// })
+
+// console.log(a)
+
+
+
+Array.prototype.raj = function(curr,acc){
+
+  for(let i = 0 ; i <this.length ; i++){
+    acc = curr + acc
+  }
+  return acc
+
+}
+
+let arr = [1,2,3,4,5]
+let a = arr.raj((curr,acc)=>{
+return curr + acc
+},0)
+console.log(a)
+
+</script>

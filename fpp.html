@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        height: 200px;
+        width: 200px;
+background-color: black;
+color:  white;
+display: none;
+    }
+</style>
+<body>
+   <center>
+    <button onclick="showModal()">Live Modal</button>
+    <div id="modal">Hello , Modal
+        <button onclick="cls()">close</button>
+    </div>
+   </center> 
+</body>
+</html>
+<script>
+function startModal(){
+let modal = document.getElementById("modal")
+modal.style.display = "block"
+}
+function showModal(){
+    setTimeout(startModal, 500)
+}
+function cls(){
+    let modal = document.getElementById("modal")
+modal.style.display = "none"  
+}
+</script>

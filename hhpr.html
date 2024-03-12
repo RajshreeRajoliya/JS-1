@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1::before{
+        content: '✨';
+    }
+    h1::after{
+        content: '✨';
+    }
+
+    span::before{
+        content: '✨';
+    }
+   span:hover::before{
+    content: '🌟'; 
+   }
+   /* img:hover{
+    content: url('https://bluefly.com/cdn/shop/files/1311784206_RLLZ_4_360x.jpg?v=1709908775');
+   } */
+   input:hover:focus{
+    background-color: red;
+   }
+
+   .pic{
+    width: 100px;
+    height: 100px;
+    transition: 2s , 4s;
+   }
+   .pic:hover{
+    width: 300px;
+    height: 300px;
+   }
+</style>
+<body>
+    <h1>Our Website <span>Emoji </span> </h1>
+    <input type="text">
+
+    <img src="https://bluefly.com/cdn/shop/files/1311784206_RLLZ_1_360x.jpg?v=1709908768" alt="">
+
+    <img src="https://bluefly.com/cdn/shop/files/1311784206_RLLZ_3_360x.jpg?v=1709908773" alt="" class="pic">
+</body>
+</html>

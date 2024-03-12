@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+// Array.prototype.raj = function(cb){
+// let newArr = []
+// for(let i = 0; i < this.length ; i++){
+//     newArr.push(cb(this[i]))
+// }
+// return newArr
+// }
+
+// Array.prototype.raj = function(cb){
+//     let newArr = []
+//     for(let i = 0 ; i < this.length ; i++){
+//         if(cb(this[i])){
+//             newArr.push(cb(this[i]))
+//         }
+//     }
+//     return newArr
+// }
+
+
+// Array.prototype.raj = function(cb,acc){
+// for(let i = 0 ; i < this.length ; i++){
+//     acc = cb(this[i] , acc)
+// }
+// return acc
+// }
+
+Array.prototype.raj = function(cb){
+    for(let i = 0 ; i < this.length ; i++){
+    cb(this[i])
+    }
+
+}
+
+
+
+
+
+// let arr = [1,2,3,4,5]
+// let a = arr.raj((el)=>{
+//     return el * el
+// })
+
+// console.log(a)
+
+
+// let arr = [1,2,3,4,5]
+// let a = arr.raj((el)=>{
+//     if(el % 2 == 0){
+//         return el
+//     }
+// })
+
+// console.log(a)
+
+
+// let arr = [1,2,3,4,5]
+// let a = arr.raj((curr , acc)=>{
+//    return acc + curr
+// },0)
+
+// console.log(a)
+
+let arr = [1,2,3,4,5]
+arr.raj((el)=>{
+    console.log(el)
+})
+
+
+
+</script>

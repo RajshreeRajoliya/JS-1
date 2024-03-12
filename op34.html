@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // class Animal{
+    //     constructor(name){
+    //         this.name = name
+    //     }
+    //     eat(){
+    //         console.log(this.name + "eating")
+    //     }
+    //     sleep(){
+    //         console.log(this.name + "Sleep")
+    //     }
+    // }
+
+    // class Cat extends Animal{
+    //     sound(){
+    //         console.log("Meoeee")
+    //     }
+    // }
+    // class Dog extends Animal{
+    //     sound(){
+    //         console.log("Meoeee")
+    //     }
+    // }
+
+    // let a = new Animal("Browny")
+    // a.eat()
+    // a.sleep()
+
+    // let b = new Cat("Cookie")
+    // b.sound()
+    // b.eat()
+
+    // let c = new Dog("Cookie")
+    // c.sound()
+    // c.eat()
+
+
+    // class Automobile{
+    //     constructor(wheel , seat){
+    //         this.wheel = wheel
+    //         this.seat = seat
+    //     }
+    // }
+
+    // class electric extends Automobile{
+    //     constructor(bttry , wheel , seat){
+    //         super(wheel , seat)
+    //         this.bttry = bttry
+    //     }
+    // }
+
+    // let tata = new Automobile(2,8)
+    // console.log(tata)
+
+    // let newatata = new electric(5,3,899)
+    // console.log(newatata)
+
+
+
+    Array.prototype.raj = function(cb){
+        let newArr = []
+        for(let i = 0 ; i < this.length ; i++){
+if((cb(this[i]))){
+    newArr.push(cb(this[i]))
+}
+        }
+    return newArr
+    }
+
+    let arr = [1,2,3,4,5]
+let a = arr.raj((el)=>{
+  return el
+})
+console.log(a)
+</script>

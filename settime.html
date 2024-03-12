@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS styles */
+        #modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.5;
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showModal()">Modal</button>
+
+    <!-- Modal -->
+    <div id="modal">
+        This is a modal.
+        <button onclick="clsbtn()">close</button>
+    </div>
+
+    <script>
+        function show() {
+            // Get the modal element
+            var modal = document.getElementById('modal');
+            // Make the modal visible by changing its display property
+            modal.style.display = 'block';
+        }
+
+        function showModal() {
+            setTimeout(show, 1000);
+        }
+        function clsbtn(){
+            var modal = document.getElementById('modal');
+            // Make the modal visible by changing its display property
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
