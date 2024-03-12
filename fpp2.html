@@ -5,7 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    img{
+        display: none;
+    }
+</style>
 <body>
-    
+   <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/bef705133d335f5c.jpg?q=20" alt="">
+   <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/88a387d43cef39e5.png?q=20" alt="">
+   <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/e4bf2a96a311355e.jpg?q=20" alt=""> 
 </body>
 </html>
+
+<script>
+    let slides = document.querySelectorAll("img")
+    let index = 0
+
+    function startSlides(index){
+        for(let i  = 0; i < slides.length ; i++){
+            slides[i].style.display = "none"
+        }
+     slides[index].style.display = "block"
+    }
+
+    function showSlide(){
+        setInterval(()=>{
+            startSlides(index)
+            index++
+            if(index >= slides.length){
+                index = 0
+            }
+        },500)
+    }
+
+    showSlide()
+
+</script>

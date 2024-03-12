@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #sale{
+        display: none;
+    }
+</style>
+<body>
+    <h1 id="counter"></h1>
+    <h1 id="countdown"></h1>
+    <div id="sale"> 
+        <h1>Sale is Live</h1>
+    </div>
+</body>
+</html>
+<script>
+// let counter = document.getElementById("counter")
+// let count = 0;
+
+// setInterval(()=>{
+// count++
+// counter.innerHTML = count
+// },500)
+
+let countdown = document.getElementById("countdown")
+let count = 10
+let stop
+stop = setInterval(()=>{
+count--
+countdown.innerHTML = count
+if(count === 0){
+    document.getElementById("sale").style.display = "block"
+    document.getElementById("countdown").style.display = "none"
+    clearInterval(stop)
+    
+}
+console.log(count)
+},500)
+
+</script>
