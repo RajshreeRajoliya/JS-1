@@ -13,36 +13,33 @@
 <body>
     <h1 id="counter"></h1>
     <h1 id="countdown"></h1>
-    <div id="sale"> 
-        <h1>Sale is Live</h1>
+    <div id="sale">
+        <h1>SALE! upto 50%</h1>
     </div>
-
-    <h1 id="demo"></h1>
 </body>
 </html>
 <script>
 // let counter = document.getElementById("counter")
-// let count = 0;
-
+// let count = 0
 // setInterval(()=>{
 // count++
 // counter.innerHTML = count
-// },500)
-
-// let countdown = document.getElementById("countdown")
-// let count = 10
-// setInterval(()=>{
-// count--
-// countdown.innerHTML = count
-// if(count === 0){
-//     document.getElementById("sale").style.display = "block"
-//     document.getElementById("countdown").style.display = "none"
-   
-    
+// if(count == 10){
+//     count = 0
 // }
-// console.log(count)
 // },500)
 
-
+let countdown = document.getElementById("countdown")
+let c = 10
+let stop;
+ stop = setInterval(()=>{
+    c--
+    countdown.innerHTML = c
+    if(c == 0){
+document.getElementById("sale").style.display = "block"
+// countdown.style.display = "none"
+clearInterval(stop)
+    }
+},500)
 
 </script>
