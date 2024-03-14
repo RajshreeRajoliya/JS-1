@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        font-size: 4vw;
+    }
+    input{
+        width: 25%;
+        height: 50px;
+     
+    }
+    label{
+        font-size: 2vw;
+    }
+    button{
+        width: 25%;
+        height: 50px;
+        background-color: black;
+        color: wheat;
+    }
+</style>
+<body>
+    <center>
+        <h1>CREATE ACCOUNT</h1>
+        <form action="" id="signup">
+
+<label for="">Enter Email</label>
+<br>
+<input type="text" id="email">
+<br>
+
+<label for="">Enter Phone</label>
+<br>
+<input type="text" id="phone">
+<br>
+
+<label for="">Create Password</label>
+<br>
+<input type="text" id="password">
+<br> <br><br><br><br>
+
+<button type="submit">Submit</button>
+        </form>
+    </center>
+</body>
+</html>
+
+<script>
+let signup = document.getElementById("signup")
+signup.addEventListener("submit",function(event){
+    event.preventDefault()
+
+    let email = document.getElementById("email").value
+    let phone = document.getElementById("phone").value
+    let password = document.getElementById("password").value
+
+// let storedUsers = {
+//     email : email,
+//     phone : phone ,
+//     password : password
+// }
+let storedUsers = JSON.parse(localStorage.getItem("users")) || []
+storedUsers.push({email , phone , password})
+localStorage.setItem("users", JSON.stringify(storedUsers))
+alert("Signed Up Success")
+window.location.href = "log.html"
+})
+
+
+</script>

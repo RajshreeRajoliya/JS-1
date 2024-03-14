@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    h1{
+        font-size: 4vw;
+        text-align: center;
+    }
+    input{
+        width: 300px;
+        height: 40px;
+    }
+    button{
+        width: 300px;
+        height: 40px;
+        background-color: black;  
+        color: white;
+        font-size: larger;
+    }
+</style>
+
+<body>
+    <h1>Log In</h1>
+   <center>
+    <form id="loginForm">
+        <label>Email</label>
+        <br>
+        <input type="email" id="loginemail">
+<br><br><br>
+        
+        <label>Password</label>
+        <br>
+        <input type="password" id="loginpassword">
+        <br><br><br>
+        <button type="submit">Sign In</button>
+    </form>
+   </center>
+</body>
+</html>
+
+<script>
+    const loginForm = document.getElementById("loginForm")
+
+    loginForm.addEventListener("submit",function(event){
+        event.preventDefault();
+
+        const loginemail = document.getElementById("loginemail").value;
+        const loginpassword = document.getElementById("loginpassword").value;
+
+        const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+        const users = storedUsers.find(users => users.password == loginpassword &&
+         users.email == loginemail)
+
+        if(users){
+            alert("Logged In Successfully !")
+        } else {
+            alert("Invalid Credentials. Check Again!")
+        }
+    })
+</script>

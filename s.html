@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        font-size: 5vw;
+    }
+</style>
+<body>
+ <center>
+
+    <h1>SIGN UP FORM</h1>
+<form action="logg.html" id="signup">
+
+<label for="">Enter Email</label>
+<br>
+<input type="text" id="email">
+<br><br><br>
+
+<label for="">Enter Phone</label>
+<br>
+<input type="text" id="phone">
+<br><br><br>
+
+<label for="">Enter Password</label>
+<br>
+<input type="text" id="password">
+<br><br><br>
+
+<button type="submit">SUBMIT</button>
+
+</form>
+
+ </center>   
+
+
+</body>
+</html>
+
+<script>
+let signup = document.getElementById("signup")
+signup.addEventListener("submit",function(event){
+    event.preventDefault()
+
+    let email = document.getElementById("email").value
+    let phone = document.getElementById("phone").value
+    let password = document.getElementById("password").value
+
+let storedUsers = JSON.parse(localStorage.getItem("users")) || []
+storedUsers.push({email , phone ,password})
+localStorage.setItem("users", JSON.stringify(storedUsers))
+window.location.href = "logg.html"
+
+})
+
+
+
+
+
+
+
+</script>

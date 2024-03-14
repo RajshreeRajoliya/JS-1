@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    h1{
+        font-size: 4vw;
+        text-align: center;
+    }
+    input{
+        width: 300px;
+        height: 40px;
+    }
+    button{
+        width: 300px;
+        height: 40px;
+        background-color: black;  
+        color: white;
+        font-size: larger;
+    }
+</style>
+
+<body>
+    <h1>CREATE ACCOUNT</h1>
+   <center>
+    <form id="signupForm">
+        <label>Email</label>
+        <br>
+        <input type="email" id="email">
+<br><br><br>
+        <label>Phone</label>
+        <br>
+        <input type="tel" id="phone">
+        <br><br><br>
+        <label>Password</label>
+        <br>
+        <input type="password" id="password">
+        <br><br><br>
+        <button type="submit">CREATE</button>
+    </form>
+   </center>
+</body>
+</html>
+
+<script>
+    const signupForm = document.getElementById("signupForm");
+
+    signupForm.addEventListener("submit",function(event){
+
+        event.preventDefault()
+
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const password = document.getElementById("password").value;
+
+        const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+        storedUsers.push({email , phone , password})
+        
+        // const storedUsers = {
+        //     email  : email,
+        //     phone : phone,
+        //     password : password
+        // }
+
+        localStorage.setItem("users",JSON.stringify(storedUsers))
+
+        alert("Signed up Successfully !")
+       window.location.href = "day32log.html"
+    })
+</script>
