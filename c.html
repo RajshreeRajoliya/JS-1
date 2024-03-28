@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cart"></div>
+</body>
+</html>
+<script>
+  let products =  JSON.parse(localStorage.getItem("cart")) || []
+
+
+  function displayCart(){
+    document.getElementById("cart").innerHTML = ""
+products.map((el)=>{
+let div = document.createElement("div")
+let title = document.createElement("h1")
+title.innerHTML = el.title
+let price = document.createElement("h4")
+price.innerHTML =  el.price
+let image = document.createElement("img")
+image.setAttribute("src",el.image)
+
+
+div.append(title , price , image)
+document.getElementById("cart").append(div)
+
+
+})
+  }
+
+displayCart()
+
+
+</script>

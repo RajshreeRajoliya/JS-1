@@ -5,17 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+
+    img{
+width: 20%;
+    }
+    #main{
+        display: flex;
+    }
+</style>
 <body>
     <center>
+        <div id="cart"></div>
 
         <div id="main"></div>
-
 
     </center>
 </body>
 </html>
 <script>
 
+    let cart = document.createElement("button")
+    cart.innerHTML = "CART"
+    document.getElementById("cart").append(cart)
+
+
+    cart.addEventListener("click",function(){
+        window.open("c.html")
+    })
 let data =[
 {
     id : 1,
@@ -53,7 +70,7 @@ let data =[
 
 
 function display(data){
-    data.map((el)=>{
+    data.map((el,i)=>{
     let div = document.createElement("div")
 
     let title = document.createElement("h2")
@@ -65,9 +82,22 @@ function display(data){
     let image = document.createElement("img")
     image.setAttribute("src",el.image)
 
-    div.append(title , price , image)
+  let crtBtn = document.createElement("button")
+  crtBtn.innerHTML = "Add To Cart"
+  crtBtn.addEventListener("click",function(){
+    addtoCart(data,i)
+  })
+
+    div.append(title , price , image , crtBtn)
     document.getElementById("main").append(div)
 })
 }
 display(data)
+
+function addtoCart(data,index){
+    let product = data[index]
+    let products =  JSON.parse(localStorage.getItem("cart")) || []
+    products.push(product)
+    localStorage.setItem("cart",JSON.stringify(products))
+}
 </script>

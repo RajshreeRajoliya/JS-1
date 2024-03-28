@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #tit{
+        color: red;
+        font-size: 20px;
+    }
+    .pic{
+        width: 20%;
+    }
+    #main{
+        display: flex;
+    }
+
+</style>
+<body>
+    <div id="main"></div>
+
+</body>
+</html>
+<script>
+
+let data = [
+
+{
+    id : 1,
+    title :	"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price:	109.95,
+    image:	"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+},
+
+{
+    id : 2,
+    title :	"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price:	109.95,
+    image:	"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+},
+
+{
+    id : 3,
+    title :	"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price:	109.95,
+    image:	"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+},
+
+{
+    id : 4,
+    title :	"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price:	109.95,
+    image:	"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+}
+
+
+
+
+]
+
+function display(data){
+data.map((el)=>{
+let div = document.createElement("div")
+
+let title = document.createElement("h1")
+title.innerHTML = el.title
+title.setAttribute("id","tit")
+
+let price = document.createElement('h2')
+price.innerHTML = el.price
+
+let image = document.createElement("img")
+image.setAttribute("src",el.image)
+image.classList.add("pic")
+
+
+div.append(title , price , image)
+document.getElementById("main").append(div)
+})
+}
+
+display(data)
+
+
+
+</script>
