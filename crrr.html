@@ -36,26 +36,25 @@ let title = document.createElement("h2")
 title.innerHTML = el.title
 
 let price = document.createElement("h4")
-price.innerHTML =  (el.price * el.quantity  )
-price.setAttribute("id", "pr"+index)
+price.innerHTML = (el.quantity *  el.price)
+price.setAttribute("id","pr"+index)
 
-let quantity = document.createElement("p")
-quantity.innerHTML = el.quantity
-quantity.setAttribute("id" , "qty"+index)
+
 
 let image = document.createElement("img")
 image.setAttribute("src",el.image)
 
+let quantity = document.createElement("p")
+quantity.innerHTML = el.quantity
+quantity.setAttribute("id","qty"+index)
+
 let increment = document.createElement("button")
 increment.innerHTML = "+"
 increment.addEventListener("click",function(){
- el.quantity += 1
+el.quantity += 1
 document.getElementById("qty"+index).innerHTML = el.quantity
 document.getElementById("pr"+index).innerHTML = (el.quantity * el.price)
-
 })
-
-
 
 let deleteBtn = document.createElement("button")
 deleteBtn.innerHTML = "Delete"
@@ -65,7 +64,7 @@ deleteBtn.addEventListener("click",function(){
   displayCart()
 })
 
-div.append(title , price,image,deleteBtn , quantity ,increment)
+div.append(title , price,image,deleteBtn,quantity,increment)
 document.getElementById("cart").append(div)
   })
 
