@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="box">
+
+<form action="" id="main">
+    <input type="text" id="value">
+    <button id="btn">Pay</button>
+</form>
+
+
+   <img id= "load" src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw700" alt="">
+
+
+   <div id="work"></div>
+
+    </div>
+
+
+
+</body>
+</html>
+
+
+<script>
+document.getElementById("load").style.display = "none"
+document.getElementById("main").addEventListener("submit",function pay(){
+    event.preventDefault()
+
+
+var price = document.getElementById("value").value
+
+var pr = new Promise(function(res,rej){
+setTimeout(()=>{
+    if(price > 1 && price <= 5000){
+res("Success !")
+    } else {
+rej("Error !")
+    }
+
+},1000)
+
+
+})
+
+document.getElementById("work").innerHTML = ""
+document.getElementById("load").style.display = "block"
+
+pr
+.then(function(res){
+
+
+    document.getElementById("load").style.display = "none"
+        document.getElementById("work").style.display = "block"
+            var amt = document.createElement('h1')
+            amt.innerText = res
+            alert(res)
+            document.querySelector("#work").append(amt)
+
+})
+
+})
+</script>

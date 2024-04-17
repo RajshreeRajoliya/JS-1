@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+
+        <form action="" id="main">
+            <input type="text" id="price">
+            <input type="submit" id="btn">
+        </form>
+
+        <img src="https://i.pinimg.com/originals/71/3a/32/713a3272124cc57ba9e9fb7f59e9ab3b.gif" alt="" id="load">
+
+        <h1 id="message"></h1>
+    </center>
+
+</body>
+</html>
+<script>
+document.getElementById("load").style.display = "none"
+document.getElementById("main").addEventListener("submit",function pay(){
+    event.preventDefault()
+
+let price = document.getElementById("price").value
+let promise = new Promise(function(res , rej){
+setTimeout(()=>{
+if(price>= 1 && price <= 5000){
+    res("Success !")
+
+} else {
+rej("Errror !")
+}
+
+
+},1000)
+
+
+})
+
+
+document.getElementById("load").style.display = "block"
+
+promise
+.then(function(res){
+    document.getElementById("load").style.display = "none"
+document.getElementById("message").innerHTML = res
+alert("Sucessfully loaded")
+
+})
+.catch(function(rej){
+    document.getElementById("load").style.display = "none"
+document.getElementById("message").innerHTML = rej
+alert("Sucessfully loaded")
+})
+
+
+
+
+
+})
+
+</script>
