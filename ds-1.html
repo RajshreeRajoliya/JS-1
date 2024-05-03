@@ -9,25 +9,48 @@
     
 </body>
 </html>
-
 <script>
-// function linear(arr , target){
+
+// function linearSearch(arr , target){
 // for(let i = 0 ; i < arr.length ; i++){
 //     if(arr[i] === target){
-//         return i
-//     } 
+//         return i;
+//     }
 // }
-// return -1
+// return -1 
 // }
-// let arr = [12 , 7 , 8 , 2 , 1]
-// let target = 8
 
-// let index = linear(arr , target)
+// let arr = [12 , 90 , 45 , 2 , 3]
+// let target = 5
+
+
+
+// let index = linearSearch(arr , target)
 // if(index != -1){
-//     console.log(`Found at ${index}`)
+//     console.log("found")
 // } else {
-//     console.log("NOT Found")
+//     console.log("not")
 // }
+
+function deleteElement(arr , target){
+    let index = arr.indexOf(target)
+   
+   if(index !== -1){
+    arr.splice(index , 1)
+    console.log("Found",arr)
+   } else {
+    console.log("not")
+   }
+
+}
+
+let arr = [1,2,3,4,5]
+let  target = 4
+
+deleteElement(arr , target)
+
+
+
 
 function deleteElementFromArray(arr, elementToDelete) {
     const index = arr.indexOf(elementToDelete);
@@ -43,10 +66,4 @@ function deleteElementFromArray(arr, elementToDelete) {
 let array = [3, 6, 2, 8, 1, 9];
 const elementToDelete = 8;
 deleteElementFromArray(array, elementToDelete);
-
-let arr1 = [1,2,3]
-let arr2 = [4,5,6]
-let concated = arr1.concat(arr2)
-console.log(concated)
-  
 </script>
