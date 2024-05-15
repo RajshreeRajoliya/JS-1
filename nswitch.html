@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telecom Call Service</title>
+</head>
+<body>
+  <h1>Telecom Call Service Menu</h1>
+  <p>Press 1 for English</p>
+  <p>Press 2 for Hindi</p>
+  <p>Press 3 for Gujarati</p>
+  
+  <label for="languageChoice">Enter your choice:</label>
+  <input type="number" id="languageChoice" min="1" max="3">
+
+  <div id="output"></div>
+
+  <script>
+    document.getElementById('languageChoice').addEventListener('input', function() {
+      let languageChoice = parseInt(this.value);
+      let outputDiv = document.getElementById('output');
+      let message = "";
+
+      switch (languageChoice) {
+        case 1:
+          message += "Press 1 for Internet Recharge<br>";
+          message += "Press 2 for Top-up Recharge<br>";
+          message += "Press 3 for Special Recharge<br>";
+          break;
+        case 2:
+          message += "Internet Recharge ke liye 1 dabaiye<br>";
+          message += "Top-up Recharge ke liye 2 dabaiye<br>";
+          message += "Special Recharge ke liye 3 dabaiye<br>";
+          break;
+        case 3:
+          message += "Internet Recharge mate 1 dabavo<br>";
+          message += "Top-up Recharge mate 2 dabavo<br>";
+          message += "Special Recharge mate 3 dabavo<br>";
+          break;
+        default:
+          message = "Invalid choice";
+      }
+
+      outputDiv.innerHTML = message;
+    });
+  </script>
+</body>
+</html>
