@@ -12,29 +12,36 @@
 
 <script>
 
-    class Animal{
-        constructor(name){
-            this.name = name
-        }
-        eat(){
-            console.log(this.name + " is eating")
-        }
-        sleep(){
-            console.log(this.name + " sleeping")
-        }
+class Animal{
+    constructor(name){
+this.name = name
     }
 
-class Cat extends Animal{
-sounds(){
-    console.log("Meowww")
-}
+    eat(){
+        console.log(this.name + " is Eating")
+    }
+
+    sleep(){
+        console.log(this.name + " sleeping")
+    }
 }
 
- let a = new Animal("browny")
- console.log(a)
- let b = new Cat("Shilpa")
- console.log(b)
-b.sounds()
+class Cat extends Animal{
+
+sounds(){
+    console.log(this.name +"Meowww")
+}
+
+}
+
+let a = new Animal("Woe")
+console.log(a)
+a.eat()
+a.sleep()
+
+let b = new Cat("Shilpa")
 b.eat()
-b.sleep()
+b.sounds()
 </script>
+
+   
