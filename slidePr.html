@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        display: 0;
+    }
+</style>
+<body>
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/bef705133d335f5c.jpg?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/d05c680ac784bef4.png?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/88a387d43cef39e5.png?q=20" alt="">
+</body>
+</html>
+
+<script>
+
+let b = document.querySelectorAll("img")
+let index = 0;
+
+function slide(index){
+for(let i = 0 ; i < b.length ; i++){
+    b[i].style.display = "none"
+}
+b[index].style.display = "block"
+
+}
+
+
+function show(){
+    setInterval(()=>{
+slide(index)
+index++
+if(index >= b.length){
+    index = 0
+}
+    },2000)
+}
+show()
+</script>
