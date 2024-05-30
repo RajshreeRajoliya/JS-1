@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+<form action="" id="signUp">
+<label for="">Username</label>
+<input type="text" id="name">
+<br><br><br>
+<label for="">Email</label>
+<input type="text" id="email">
+<br><br><br>
+<label for="">Password</label>
+<input type="text" id="password">
+<br><br><br>
+<button type="submit">Submit</button>
+</form>
+
+    </center>
+    
+</body>
+</html>
+<script>
+    let signUp = document.getElementById("signUp");
+    signUp.addEventListener("submit",function(event){
+        event.preventDefault()
+
+        let name = document.getElementById("name").value
+        let email = document.getElementById("email").value
+        let password = document.getElementById("password").value
+
+        let storedUsers = JSON.parse(localStorage.getItem("users")) || []
+
+        storedUsers.push({name , email , password})
+
+        localStorage.setItem("users",JSON.stringify(storedUsers))
+
+        alert("Successfully")
+        window.location.href = "loginwala.html"
+    })
+</script>

@@ -26,7 +26,7 @@
 </body>
 </html>
 <script>
-let signupForm = document.getElementById("siggupForm")
+let signupForm = document.getElementById("signupForm")
 signupForm.addEventListener("submit",function(event){
 event.preventDefault()
 let name = document.getElementById("name").value
@@ -34,6 +34,11 @@ let email = document.getElementById("email").value
 let password = document.getElementById("password").value
 
 
+let storedUsers = JSON.parse(localStorage.getItem("users"))|| []
+storedUsers.push({name , email , password})
+localStorage.setItem("users" , JSON.stringify(storedUsers))
 
+alert("Successfully")
+window.location.href = "day32log.html"
 })
 </script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form action="" id="login">
+        <label for="">Username</label>
+        <input type="text" id="loginname">
+        <br><br><br>
+      
+        <label for="">Password</label>
+        <input type="text" id="loginpassword">
+        <br><br><br>
+        <button type="submit">Submit</button>
+        </form>
+        
+            </center>
+</body>
+</html>
+
+<script>
+let login = document.getElementById("login");
+
+login.addEventListener("submit",function(event){
+let loginname = document.getElementById("loginname").value;
+let loginpassword = document.getElementById("loginpassword").value;
+
+
+let storedUsers = JSON.parse(localStorage.getItem("users")) || []
+
+let user = storedUsers.find(el => el.name === loginname && el.password === loginpassword)
+
+if(user){
+alert("Valid")
+} else{
+alert("Invalid")
+}
+
+
+
+})
+</script>
