@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TODO APP</h1>
+    <input type="text" id="in">
+    <button onclick="add()">ADD TASK</button>
+    <h1 id="head"></h1>
+</body>
+</html>
+<script>
+         
+let todo = document.getElementById("in").value
+let tasks = []
+function add(){
+    let todo = document.getElementById("in").value;
+        tasks.push(todo);
+   
+        displayData(tasks)
+    document.getElementById("in").value = ''; 
+
+}
+
+function displayData(){
+    document.getElementById("head").innerHTML=''
+    tasks.map((el,index)=>{
+      
+        let h1 = document.createElement('h1')
+        h1.innerHTML = el       
+        let delBtn = document.createElement('button')
+        delBtn.innerHTML = "DELETE"
+
+
+        delBtn.addEventListener('click',function(){
+             rem(index)
+           
+       
+        })
+
+        let editBtn = document.createElement('button')
+        editBtn.innerHTML = "EDIT"
+        editBtn.addEventListener("click",function(){
+            editFun(index)
+        })
+document.getElementById("head").append(h1,delBtn,editBtn)
+    })
+}
+
+
+function rem(i){
+  
+    console.log(i,'inside rem')
+   tasks =  tasks.filter((el,index)=>{
+console.log(index,'inside filyer')
+       return index !== i
+
+     })
+
+     displayData()
+}
+
+
+function editFun(index){
+tasks.map((El , i)=>{
+    if(i==index){
+
+         document.getElementById("in").value = El ;
+    //    honey = El
+
+       El = document.getElementById("in").value
+        console.log(i)
+        return El
+
+    }
+
+    return i === index 
+})
+
+}
+
+</script>
