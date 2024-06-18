@@ -60,13 +60,16 @@ let data = [
 
 ]
 
-let cartBtn = document.createElement("button")
-cartBtn.innerHTML = "CART"
-document.getElementById("cart").append(cartBtn)
+let cartbtn = document.createElement("button")
+cartbtn.innerHTML = "CART"
+document.getElementById("cart").append(cartbtn)
 
+cartbtn.addEventListener("click",function(){
+    window.open("cartey.html")
+})
 
 function display(data){
-data.map((el)=>{
+data.forEach((el , i)=>{
 let box =  document.createElement("div")
 box.setAttribute("class","arjun")
 
@@ -80,14 +83,14 @@ let pic = document.createElement("img")
 pic.setAttribute("src",el.image)
 pic.setAttribute("id","baydi")
 
-let cp = document.createElement("button")
-cp.innerHTML = "CART"
 
-cp.addEventListener("click" , function(){
-    addCart(data)
+let btn = document.createElement("button")
+btn.innerHTML = "CART"
+btn.addEventListener("click",function(){
+    addTocart(data , i)
 })
 
-box.append(heading , price , pic , cp)
+box.append(heading , price , pic , btn)
 
 document.getElementById("main").append(box)
 })
@@ -95,17 +98,13 @@ document.getElementById("main").append(box)
 
 display(data)
 
+function addTocart(data , index){
+let product = data[index]
+let products = JSON.parse(localStorage.getItem("cart")) || []
+products.push(product)
 
 
-
-// document.getElementById("cart").addEventListener("click",function(){
-//     window.open("car.html")
-// })
-
-function addCart(data){
-let products = JSON.parse(localStorage.getItem("product")) || []
-
-localStorage.setItem("product" , JSON.stringify(products))
+localStorage.setItem("cart" , JSON.stringify(products))
 }
 
 </script>

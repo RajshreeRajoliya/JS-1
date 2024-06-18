@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+
+
+// let names = Students.map((el)=>{
+//     return el.name.toUpperCase()
+// })
+
+
+// let names = Students.filter((El)=>{
+//     return El.marks > 50 && El.roll > 20
+// })
+
+
+// let names = Students.reduce((acc , curr)=>{
+//     return  acc + curr.marks
+// },0)
+
+
+
+// let names = Students.filter((El)=>{
+//      return El.marks > 70 
+//  }).map((El)=>{
+//     return El.name
+//  })
+let Students = [
+{name : "Priya" , roll : 21 , marks : 80},
+{name : "Rutul" , roll : 20 , marks : 600 },
+{name : "Ayush" , roll: 30 , marks : 70},
+
+]
+
+let arr = []
+
+for(let i = 0 ; i < Students.length ; i++){
+    arr.push(Students[i].name.toUpperCase())
+}
+console.log(arr)
+// let names = Students.map((El)=>{
+//      if(El.marks < 60){
+//     return    El.marks +=  20
+//      }
+//  }).filter((El)=>{
+//     return El.marks > 100
+//  })
+// console.log(names)
+
+</script>
