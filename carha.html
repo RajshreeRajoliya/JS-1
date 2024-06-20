@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    img{
+        width: 200px;
+        height: 200px;
+    }
+</style>
 <body>
     <div id="cart"></div>
 </body>
@@ -14,7 +20,8 @@
 
 
     function display(){
-        products.forEach((el , i)=>{
+        document.getElementById("cart").innerHTML = ""
+        products.forEach((el , index)=>{
 let box =  document.createElement("div")
 box.setAttribute("class","arjun")
 
@@ -29,13 +36,22 @@ pic.setAttribute("src",el.image)
 pic.setAttribute("id","baydi")
 
 
-let btn = document.createElement("button")
-btn.innerHTML = "CART"
-btn.addEventListener("click",function(){
-    addTocart(data , i)
+let quantity = document.createElement("p")
+     quantity.innerHTML = "Quantity : " + el.quantity
+
+          
+let delBtn = document.createElement("button")
+delBtn.innerHTML = "HATA"
+delBtn.addEventListener("click" , function(){
+    products.splice(index , 1)
+    localStorage.setItem("cart",JSON.stringify(products))
+    display()
 })
 
-box.append(heading , price , pic , btn)
+
+
+
+box.append(heading , price , pic , quantity ,delBtn)
 
 document.getElementById("cart").append(box)
 })

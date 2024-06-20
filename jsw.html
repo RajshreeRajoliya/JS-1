@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 class="head">
+        Raju
+    </h1>
+    <button onclick="onchg()">Change</button> -->
+
+    <h5>sjdjaK</h5>
+    <h5>sjdjaK</h5>
+    <h5>sjdjaK</h5>
+    <h5>sjdjaK</h5>
+
+    <button onclick="h5Ch()">Change h5</button>
+</body>
+</html>
+<script>
+
+function onchg(){
+document.querySelector(".head").style.color = "yellow"
+document.querySelector(".head").style.backgroundColor = "yellow"
+}
+
+function h5Ch(){
+    let h5 = document.querySelectorAll("h5")
+    for(let i = 0 ; i < h5.length ; i++){
+        h5[i].style.color = "green"
+    }
+}
+
+</script>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{
+        display: flex;
+        border: 3px solid;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    #baydi{
+      width: 400px;
+      height: 300px;
+    }
+    .arjun{
+        border: 2px solid;
+        padding: 20px;
+        height: 500px;
+    }
+</style>
+<body>
+    <div id="main"></div>
+    <!-- <div id="cart"></div> -->
+    <button id="cart">CART</button>
+</body>
+</html>
+<script>
+let data = [
+{
+    id : 1,
+    title :"Fjallraven",
+    price : 109.95,
+    image : "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+
+},
+{
+    id : 2,
+    title :"Mens Casual",
+    price : 22.3,
+    image : "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"  
+},
+{
+    id : 3,
+    title :"Mens Cotton Jacket",
+    price : 55.99,
+    image : "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"      
+},
+{
+    id : 4,
+    title :"Mens Casual Slim Fit",
+    price : 15.99,
+    image : "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"   
+}
+
+
+
+]
+
+
+
+let cartBtn = document.getElementById("cart")
+
+cartBtn.addEventListener("click",function(){
+    window.open("carha.html")
+})
+
+
+function display(data){
+data.map((el,i)=>{
+let box =  document.createElement("div")
+box.setAttribute("class","arjun")
+
+let heading = document.createElement("h1")
+heading.innerHTML = el.title
+
+let price = document.createElement("p")
+price.innerHTML = el.price
+
+let pic = document.createElement("img")
+pic.setAttribute("src",el.image)
+pic.setAttribute("id","baydi")
+
+let btn = document.createElement("button")
+btn.innerHTML = "ADD TO CART"
+btn.addEventListener("click",function(){
+    addTocart(data , i)
+})
+
+box.append(heading , price , pic , btn)
+
+document.getElementById("main").append(box)
+})
+}
+
+display(data)
+
+function addTocart(data , index){
+let product = data[index]
+let products = JSON.parse(localStorage.getItem("cart")) || []
+products.push(product)
+localStorage.setItem("cart",JSON.stringify(products))
+
+}
+
+</script>
