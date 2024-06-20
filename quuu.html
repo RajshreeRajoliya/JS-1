@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Rajshree Rajoliya</h1>
+    <button onclick="heading()">Click H1</button>
+
+
+  <h3 class="j">work</h3>
+  <h3 class="j">work</h3>
+  <h3 class="j">work</h3>
+  <h3 class="j">work</h3>
+  <h3 class="j">work</h3>
+  <button onclick="chgH2()">Change H3</button>
+    
+
+
+</body>
+</html>
+<script>
+//    function heading(){
+//     document.querySelector("#head").style.color = "red"
+//    }
+
+
+function chgH2(){
+    let h3EL = document.querySelectorAll(".j")
+    for(let i = 0 ; i < h3EL.length ; i++){
+        h3EL[i].style.backgroundColor = "orange"
+    }
+}
+</script>

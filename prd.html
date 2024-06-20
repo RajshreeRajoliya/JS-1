@@ -25,6 +25,7 @@
 </style>
 <body>
     <div id="main"></div>
+    <hr>
     <div id="cart"></div>
 </body>
 </html>
@@ -65,7 +66,7 @@ cartbtn.innerHTML = "CART"
 document.getElementById("cart").append(cartbtn)
 
 cartbtn.addEventListener("click",function(){
-    window.open("cartey.html")
+    window.open("carha.html")
 })
 
 function display(data){
@@ -100,11 +101,9 @@ display(data)
 
 function addTocart(data , index){
 let product = data[index]
-let products = JSON.parse(localStorage.getItem("cart")) || []
+let products =JSON.parse(localStorage.getItem("cart")) || []
 products.push(product)
-
-
-localStorage.setItem("cart" , JSON.stringify(products))
+localStorage.setItem("cart",JSON.stringify(products))
 }
 
 </script>
