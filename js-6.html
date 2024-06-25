@@ -24,7 +24,14 @@
     }
 </style>
 <body>
+    <select name="" id="sortselect">
+        <option value="low">Low</option>
+        <option value="high">High</option>
+        <option value="az">AZ</option>
+        <option value="za">ZA</option>
+    </select>
     <div id="main"></div>
+
     <!-- <div id="cart"></div> -->
     <button id="cart">CART</button>
 </body>
@@ -99,10 +106,35 @@ document.getElementById("main").append(box)
 
 display(data)
 
+
+let selectedVal = document.getElementById("sortselect")
+selectedVal.addEventListener("change",function(){
+
+let selected = selectedVal.value
+let seArr = []
+
+if(selected === "low"){
+seArr = data.sort((a,b)=> a.price - b.price)
+}
+
+})
+
+
 function addTocart(data , index){
 let product = data[index]
 let products = JSON.parse(localStorage.getItem("cart")) || []
-products.push(product)
+
+let existingPr = products.findIndex(p => p.id == product.id)
+if(existingPr != -1){
+products[existingPr].quantity += 1
+} else {
+    products.push(product)
+    product.quantity = 1
+}
+
+
+   
+
 localStorage.setItem("cart",JSON.stringify(products))
 
 }
