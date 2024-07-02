@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="main"></div> 
+</body>
+</html>
+<script>
+fetch("https://fakestoreapi.com/products")
+// .then(function(res){
+//     return res.json()
+// }).then(function(json){
+// console.log(json)
+// displayData(json)
+// }).catch((err)=>{
+//     console.log(err)
+// })
+
+
+async function fetchingData(){
+let data = await fetch("https://fakestoreapi.com/products")
+let jsonData = await data.json()
+console.log(jsonData)
+displayData(jsonData)
+}
+fetchingData()
+function displayData(data){
+data.map((el)=>{
+    let div = document.createElement("div")
+let title = document.createElement("h1")
+title.innerHTML = el.title
+
+let image = document.createElement("img")
+image.setAttribute("src",el.image)
+
+div.append(title , image)
+document.getElementById("main").append(div)
+}) 
+}
+
+
+</script>
