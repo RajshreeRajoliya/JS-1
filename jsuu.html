@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        display: none;
+    }
+</style>
+<body>
+    
+<h1 id="count"></h1>
+<img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ncKq_uSmJojitRFDEHql4Lpsl8Y4y3ahxcLHmVhgN5_2rSSX1yX9UM-8J0Y2yr5rtcY&usqp=CAU" alt="" id="pic">
+
+</body>
+</html>
+<script>
+    let index = 10
+let stop = setInterval(()=>{
+document.getElementById("count").innerHTML = index
+index--
+if(index < 0){
+    clearInterval(stop)
+document.querySelector("img").style.display = "block"
+}
+},1000)
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        display: block;
+
+    }
+</style>
+<body>
+   <h1 id="head"></h1> 
+   <img src="https://images.wondershare.com/filmora/article-images/2021/happy-birthday-snoopy.gif" alt="">
+</body>
+</html>
+<script>
+let index = 10
+
+setInterval(()=>{
+
+document.getElementById("head").innerHTML = index
+index--
+if(index == 0){
+document.querySelector("img").style.display = "none"
+}
+},1000)
+
+
+</script>

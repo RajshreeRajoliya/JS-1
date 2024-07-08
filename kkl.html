@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+   <center>
+    <!-- <h1 id="counter">1</h1> -->
+    <h1 id="countdown">10</h1>
+    <div id="bday">
+        <h1>Bhai ka birthday !</h1>
+    </div>
+   </center>
+</body>
+</html>
+<script>
+// let counter = document.getElementById("counter")
+// let count = 0
+// let stop
+// stop = setInterval(()=>{
+// count++
+// counter.innerHTML = count
+// if(count == 20){
+//    clearInterval(stop)
+// }
+// },1000)
+
+
+let countdown = document.getElementById("countdown")
+let index = 10
+let stop
+stop = setInterval(()=>{
+ index--
+
+ countdown.innerHTML = index   
+ if(index == 0){
+    clearInterval(stop)
+    document.getElementById("bday").style.display = "flex"
+    countdown.style.display = "none"
+ }
+},1000)
+</script>
